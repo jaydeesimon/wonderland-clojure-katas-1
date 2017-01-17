@@ -11,11 +11,11 @@
 
 (def row-col-vals (mapcat (partial rotate alphabet) (range (count alphabet))))
 
-(def encode-chart (into {} (map vector rows-cols row-col-vals)))
+(def encode-chart (into (sorted-map) (map vector rows-cols row-col-vals)))
 
-(def decode-chart (into {} (map (fn [[[row col] val]]
-                                  [[row val] col])
-                                encode-chart)))
+(def decode-chart (into (sorted-map) (map (fn [[[row col] val]]
+                                            [[row val] col])
+                                          encode-chart)))
 
 (defn apply-transform [f message' message]
   (apply str (map (comp f vector) message' message)))
