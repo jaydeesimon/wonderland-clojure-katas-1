@@ -5,7 +5,9 @@
 (defn rotate [coll n]
   (take (count coll) (drop n (cycle coll))))
 
-(def rows-cols (for [i alphabet j alphabet] [i j]))
+(def rows-cols (for [i alphabet
+                     j alphabet]
+                 [i j]))
 
 (def row-col-vals (mapcat (partial rotate alphabet) (range (count alphabet))))
 
