@@ -33,8 +33,8 @@
        (some #(and (= (get-in maze %) x) %))))
 
 (defn assoc-in-maze [maze coords v]
-  "Given a seq of coords and a maze, sets the
-  coordinates to v."
+  "Given a seq of coordinates and a maze, sets
+  those coordinates to v."
   (reduce (fn [maze' coord]
             (assoc-in maze' coord v))
           maze
