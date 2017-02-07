@@ -10,7 +10,7 @@
 
 (defn path [maze start end]
   "Returns the ordered coordinates to get from
-  the start coord to the end coord using a bfs
+  the start coord to the end coord. Uses a bfs
   approach. Returns an empty vector, if no such
   path exists."
   (loop [frontier [[start [start]]]
